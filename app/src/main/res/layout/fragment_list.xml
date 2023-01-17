@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.list.ListFragment">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="listsViewModel" type="com.aqsoft.cleanmvvm.ui.list.ListsViewModel"/>
+
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/items_recycler_view"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="1"
+            />
+
+            <ProgressBar
+                android:visibility="@{listsViewModel.isLoaded()?View.GONE:View.VISIBLE}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/items_progress_bar"/>
+    </FrameLayout>
+</layout>

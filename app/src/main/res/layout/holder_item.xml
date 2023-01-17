@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="listViewModel" type="com.aqsoft.cleanmvvm.ui.list.ListViewModel"/>
+    </data>
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        app:cardCornerRadius="9dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{listViewModel.item.CommonName}"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_margin="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{listViewModel.item.BotanicalName}"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_margin="8dp"/>
+        <TextView android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@{listViewModel.item.Memo}"
+            android:textSize="14sp"
+            android:layout_margin="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
